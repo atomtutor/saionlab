@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>만든 것들 · 코딩 수업 아카이브</title>
+<link rel="stylesheet" as="style" crossorigin
+  href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="brand">코딩 수업 <span>아카이브</span></div>
+    <nav class="menu">
+      <a href="index.html">홈</a>
+      <a href="works.html" class="active">만든 것들</a>
+    </nav>
+  </div>
+</header>
+
+<div class="banner">새 작품이 추가될 때마다 이 페이지가 업데이트됩니다</div>
+
+<main>
+  <section class="gallery">
+    <h2>만든 것들</h2>
+    <p class="section-desc">카테고리를 눌러서 걸러볼 수 있어요. 카드를 클릭하면 새 창으로 열립니다.</p>
+
+    <div id="filters">
+      <button class="pill active" data-cat="all">전체</button>
+      <button class="pill" data-cat="block">블록코딩</button>
+      <button class="pill" data-cat="p5">p5js</button>
+      <button class="pill" data-cat="vibe">바이브코딩</button>
+      <button class="pill" data-cat="data">데이터분석</button>
+      <button class="pill" data-cat="cert">자격증강좌</button>
+    </div>
+
+    <div id="grid">
+      <!-- 카드를 추가할 때는 이 블록을 복사해서 data-cat, href, tag 클래스, 제목, 설명을 바꿔주세요 -->
+      <a class="card" data-cat="vibe" href="https://atomtutor.github.io/word_app/" target="_blank" rel="noopener">
+        <span class="tag vibe"><span class="dot vibe"></span>바이브코딩</span>
+        <h3>영어단어 암기앱</h3>
+        <p class="desc">단어 카드를 넘기며 외우는 학습 앱입니다.</p>
+        <span class="go">바로가기 →</span>
+      </a>
+
+      <a class="card" data-cat="p5" href="https://atomtutor.github.io/memory_game/" target="_blank" rel="noopener">
+        <span class="tag p5"><span class="dot p5"></span>p5js</span>
+        <h3>메모리 게임</h3>
+        <p class="desc">짝을 맞추며 집중력을 기르는 카드 게임입니다.</p>
+        <span class="go">바로가기 →</span>
+      </a>
+    </div>
+
+    <div id="empty-msg">
+      <div class="icon">＋</div>
+      <p>이 카테고리는 곧 채워질 예정이에요</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <img src="assets/logo.png" alt="SAION LAB" class="footer-logo">
+  <p class="footer-slogan">기술에 온기를, 미래에 연결을</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
