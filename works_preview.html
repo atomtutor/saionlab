@@ -220,7 +220,6 @@ footer{
     <div id="filters">
       <button class="pill active" data-cat="all">전체</button>
       <button class="pill" data-cat="block">블록코딩</button>
-      <button class="pill" data-cat="p5">p5js</button>
       <button class="pill" data-cat="vibe">바이브코딩</button>
       <button class="pill" data-cat="data">데이터분석</button>
       <button class="pill" data-cat="cert">자격증강좌</button>
@@ -228,17 +227,17 @@ footer{
 
     <div id="grid">
       <!-- 카드를 추가할 때는 이 블록을 복사해서 data-cat, href, tag 클래스, 제목, 설명을 바꿔주세요 -->
-      <a class="card" data-cat="vibe" href="https://atomtutor.github.io/word_app/" target="_blank" rel="noopener">
+      <a class="card" data-cat="vibe" href="https://atomtutor.github.io/vocabulary-app/" target="_blank" rel="noopener">
         <span class="tag vibe"><span class="dot vibe"></span>바이브코딩</span>
-        <h3>영어단어 암기앱</h3>
-        <p class="desc">단어 카드를 넘기며 외우는 학습 앱입니다.</p>
+        <h3>수능연계 영단어 암기</h3>
+        <p class="desc">단어 범위와 문제 수를 설정해서 학습하는 영단어 암기 앱입니다.</p>
         <span class="go">바로가기 →</span>
       </a>
 
-      <a class="card" data-cat="p5" href="https://atomtutor.github.io/memory_game/" target="_blank" rel="noopener">
-        <span class="tag p5"><span class="dot p5"></span>p5js</span>
-        <h3>메모리 게임</h3>
-        <p class="desc">짝을 맞추며 집중력을 기르는 카드 게임입니다.</p>
+      <a class="card" data-cat="vibe" href="https://atomtutor.github.io/memory_game/" target="_blank" rel="noopener">
+        <span class="tag vibe"><span class="dot vibe"></span>바이브코딩</span>
+        <h3>몸속 기관 카드 뒤집기</h3>
+        <p class="desc">인체 장기의 모양과 이름을 짝 맞추며 익히는 카드 뒤집기 게임입니다.</p>
         <span class="go">바로가기 →</span>
       </a>
     </div>
@@ -255,6 +254,30 @@ footer{
   <p class="footer-slogan">기술에 온기를, 미래에 연결을</p>
 </footer>
 
-<script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var pills = document.querySelectorAll('.pill');
+  var cards = document.querySelectorAll('.card');
+  var emptyMsg = document.getElementById('empty-msg');
+
+  function setActive(cat){
+    pills.forEach(function(p){
+      p.classList.toggle('active', p.dataset.cat === cat);
+    });
+    var visibleCount = 0;
+    cards.forEach(function(c){
+      var show = cat === 'all' || c.dataset.cat === cat;
+      c.style.display = show ? 'flex' : 'none';
+      if(show) visibleCount++;
+    });
+    emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+  }
+
+  pills.forEach(function(p){
+    p.addEventListener('click', function(){ setActive(p.dataset.cat); });
+  });
+});
+
+</script>
 </body>
 </html>
