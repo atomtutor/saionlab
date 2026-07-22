@@ -10,3 +10,4 @@
 |---|---|---|
 | 바이브코딩 | vocabulary-app | https://atomtutor.github.io/vocabulary-app/ |
 | 바이브코딩 | memory_game | https://atomtutor.github.io/memory_game/ |
+| 바이브코딩 | CubeStack | https://atomtutor.github.io/CubeStack/ |
